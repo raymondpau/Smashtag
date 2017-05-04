@@ -15,6 +15,13 @@
 		B755A5881EB8DAFA00C2A1EB /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B755A5871EB8DAFA00C2A1EB /* Twitter.framework */; };
 		B755A5891EB8DAFA00C2A1EB /* Twitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B755A5871EB8DAFA00C2A1EB /* Twitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B755A58C1EB8E3AF00C2A1EB /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755A58B1EB8E3AF00C2A1EB /* TweetTableViewCell.swift */; };
+		B771EB021EBB466E003A461F /* SmashTweetersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771EB011EBB466E003A461F /* SmashTweetersTableViewController.swift */; };
+		B771EB041EBB496B003A461F /* FetchedResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771EB031EBB496B003A461F /* FetchedResultsTableViewController.swift */; };
+		B771EB061EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771EB051EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift */; };
+		B7CC29DF1EB9F9AF00048D66 /* Smash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29DD1EB9F9AF00048D66 /* Smash.xcdatamodeld */; };
+		B7CC29E11EBA002700048D66 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29E01EBA002700048D66 /* Tweet.swift */; };
+		B7CC29E31EBA004B00048D66 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29E21EBA004B00048D66 /* TwitterUser.swift */; };
+		B7CC29E71EBA05DA00048D66 /* SmashTweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29E61EBA05DA00048D66 /* SmashTweetTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +48,13 @@
 		B755A5851EB8D74700C2A1EB /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		B755A5871EB8DAFA00C2A1EB /* Twitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Twitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B755A58B1EB8E3AF00C2A1EB /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		B771EB011EBB466E003A461F /* SmashTweetersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmashTweetersTableViewController.swift; sourceTree = "<group>"; };
+		B771EB031EBB496B003A461F /* FetchedResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsTableViewController.swift; sourceTree = "<group>"; };
+		B771EB051EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewDataSource+NSFetchedResultsController.swift"; sourceTree = "<group>"; };
+		B7CC29DE1EB9F9AF00048D66 /* Smash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smash.xcdatamodel; sourceTree = "<group>"; };
+		B7CC29E01EBA002700048D66 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		B7CC29E21EBA004B00048D66 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
+		B7CC29E61EBA05DA00048D66 /* SmashTweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmashTweetTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +89,15 @@
 		B755A5711EB8D4F400C2A1EB /* Smashtag */ = {
 			isa = PBXGroup;
 			children = (
-				B755A5851EB8D74700C2A1EB /* TweetTableViewController.swift */,
+				B771EB051EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift */,
+				B771EB031EBB496B003A461F /* FetchedResultsTableViewController.swift */,
 				B755A5761EB8D4F400C2A1EB /* Main.storyboard */,
+				B7CC29DD1EB9F9AF00048D66 /* Smash.xcdatamodeld */,
+				B7CC29E01EBA002700048D66 /* Tweet.swift */,
+				B7CC29E21EBA004B00048D66 /* TwitterUser.swift */,
+				B755A5851EB8D74700C2A1EB /* TweetTableViewController.swift */,
+				B7CC29E61EBA05DA00048D66 /* SmashTweetTableViewController.swift */,
+				B771EB011EBB466E003A461F /* SmashTweetersTableViewController.swift */,
 				B755A58B1EB8E3AF00C2A1EB /* TweetTableViewCell.swift */,
 				B755A57E1EB8D4F400C2A1EB /* Info.plist */,
 				B755A5841EB8D6E200C2A1EB /* Supporting Files */,
@@ -168,9 +189,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7CC29E71EBA05DA00048D66 /* SmashTweetTableViewController.swift in Sources */,
+				B771EB041EBB496B003A461F /* FetchedResultsTableViewController.swift in Sources */,
+				B771EB061EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift in Sources */,
 				B755A5731EB8D4F400C2A1EB /* AppDelegate.swift in Sources */,
+				B7CC29E11EBA002700048D66 /* Tweet.swift in Sources */,
+				B7CC29E31EBA004B00048D66 /* TwitterUser.swift in Sources */,
 				B755A5861EB8D74700C2A1EB /* TweetTableViewController.swift in Sources */,
+				B7CC29DF1EB9F9AF00048D66 /* Smash.xcdatamodeld in Sources */,
 				B755A58C1EB8E3AF00C2A1EB /* TweetTableViewCell.swift in Sources */,
+				B771EB021EBB466E003A461F /* SmashTweetersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +365,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B7CC29DD1EB9F9AF00048D66 /* Smash.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B7CC29DE1EB9F9AF00048D66 /* Smash.xcdatamodel */,
+			);
+			currentVersion = B7CC29DE1EB9F9AF00048D66 /* Smash.xcdatamodel */;
+			path = Smash.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B755A5671EB8D4F400C2A1EB /* Project object */;
 }
