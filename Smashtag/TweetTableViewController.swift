@@ -20,16 +20,12 @@ import Twitter
 class TweetTableViewController: UITableViewController, UITextFieldDelegate
 {
     // MARK: Model
+    
     // part of our Model
     // each sub-Array of Tweets is another "pull" from Twitter
     // and corresponds to a section in our table
+    private var tweets = [Array<Twitter.Tweet>]()
     
-    private var tweets = [Array<Twitter.Tweet>]() {
-        didSet {
-            print(tweets)
-        }
-    }
-
     // public part of our Model
     // when this is set
     // we'll reset our tweets Array
@@ -47,7 +43,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
     }
     
     func insertTweets(_ newTweets: [Twitter.Tweet]) {
-        self.tweets.insert(newTweets, at: 0)
+        self.tweets.insert(newTweets, at:0)
         self.tableView.insertSections([0], with: .fade)
     }
     
@@ -78,7 +74,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         if let request = lastTwitterRequest?.newer ?? twitterRequest() {
             lastTwitterRequest = request
             request.fetchTweets { [weak self] newTweets in      // this is off the main queue
-                DispatchQueue.main.async {                      // so dispatch back to main queue
+                DispatchQueue.main.async {                      // so we must dispatch back to main queue
                     if request == self?.lastTwitterRequest {
                         self?.insertTweets(newTweets)
                     }
@@ -94,6 +90,8 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
     @IBAction func refresh(_ sender: UIRefreshControl) {
         searchForTweets()
     }
+    
+    // MARK: View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,7 +139,6 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         // that the table view is asking us to provide a UITableViewCell for
         let tweet: Twitter.Tweet = tweets[indexPath.section][indexPath.row]
         
-        
         // Configure the cell...
         // the textLabel and detailTextLabel are for non-Custom cells
 //        cell.textLabel?.text = tweet.text
@@ -154,6 +151,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         if let tweetCell = cell as? TweetTableViewCell {
             tweetCell.tweet = tweet
         }
+        
         return cell
     }
     

@@ -16,7 +16,7 @@ class SmashTweetTableViewController: TweetTableViewController
         (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     override func insertTweets(_ newTweets: [Twitter.Tweet]) {
-        super .insertTweets(newTweets)
+        super.insertTweets(newTweets)
         updateDatabase(with: newTweets)
     }
     
@@ -41,8 +41,7 @@ class SmashTweetTableViewController: TweetTableViewController
                     print("off main thread")
                 }
                 // bad way to count
-                let request: NSFetchRequest<Tweet> = Tweet.fetchRequest()
-                if let tweetCount = (try? context.fetch(request))?.count {
+                if let tweetCount = (try? context.fetch(Tweet.fetchRequest() as NSFetchRequest<Tweet>))?.count {
                     print("\(tweetCount) tweets")
                 }
                 // good way to count

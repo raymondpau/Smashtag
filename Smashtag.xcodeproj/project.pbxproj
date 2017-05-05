@@ -17,7 +17,6 @@
 		B755A58C1EB8E3AF00C2A1EB /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755A58B1EB8E3AF00C2A1EB /* TweetTableViewCell.swift */; };
 		B771EB021EBB466E003A461F /* SmashTweetersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771EB011EBB466E003A461F /* SmashTweetersTableViewController.swift */; };
 		B771EB041EBB496B003A461F /* FetchedResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771EB031EBB496B003A461F /* FetchedResultsTableViewController.swift */; };
-		B771EB061EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771EB051EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift */; };
 		B7CC29DF1EB9F9AF00048D66 /* Smash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29DD1EB9F9AF00048D66 /* Smash.xcdatamodeld */; };
 		B7CC29E11EBA002700048D66 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29E01EBA002700048D66 /* Tweet.swift */; };
 		B7CC29E31EBA004B00048D66 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29E21EBA004B00048D66 /* TwitterUser.swift */; };
@@ -50,7 +49,6 @@
 		B755A58B1EB8E3AF00C2A1EB /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		B771EB011EBB466E003A461F /* SmashTweetersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmashTweetersTableViewController.swift; sourceTree = "<group>"; };
 		B771EB031EBB496B003A461F /* FetchedResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsTableViewController.swift; sourceTree = "<group>"; };
-		B771EB051EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewDataSource+NSFetchedResultsController.swift"; sourceTree = "<group>"; };
 		B7CC29DE1EB9F9AF00048D66 /* Smash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smash.xcdatamodel; sourceTree = "<group>"; };
 		B7CC29E01EBA002700048D66 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		B7CC29E21EBA004B00048D66 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
@@ -89,16 +87,15 @@
 		B755A5711EB8D4F400C2A1EB /* Smashtag */ = {
 			isa = PBXGroup;
 			children = (
-				B771EB051EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift */,
-				B771EB031EBB496B003A461F /* FetchedResultsTableViewController.swift */,
 				B755A5761EB8D4F400C2A1EB /* Main.storyboard */,
 				B7CC29DD1EB9F9AF00048D66 /* Smash.xcdatamodeld */,
 				B7CC29E01EBA002700048D66 /* Tweet.swift */,
 				B7CC29E21EBA004B00048D66 /* TwitterUser.swift */,
+				B771EB031EBB496B003A461F /* FetchedResultsTableViewController.swift */,
 				B755A5851EB8D74700C2A1EB /* TweetTableViewController.swift */,
+				B755A58B1EB8E3AF00C2A1EB /* TweetTableViewCell.swift */,
 				B7CC29E61EBA05DA00048D66 /* SmashTweetTableViewController.swift */,
 				B771EB011EBB466E003A461F /* SmashTweetersTableViewController.swift */,
-				B755A58B1EB8E3AF00C2A1EB /* TweetTableViewCell.swift */,
 				B755A57E1EB8D4F400C2A1EB /* Info.plist */,
 				B755A5841EB8D6E200C2A1EB /* Supporting Files */,
 			);
@@ -191,7 +188,6 @@
 			files = (
 				B7CC29E71EBA05DA00048D66 /* SmashTweetTableViewController.swift in Sources */,
 				B771EB041EBB496B003A461F /* FetchedResultsTableViewController.swift in Sources */,
-				B771EB061EBB4A3F003A461F /* UITableViewDataSource+NSFetchedResultsController.swift in Sources */,
 				B755A5731EB8D4F400C2A1EB /* AppDelegate.swift in Sources */,
 				B7CC29E11EBA002700048D66 /* Tweet.swift in Sources */,
 				B7CC29E31EBA004B00048D66 /* TwitterUser.swift in Sources */,

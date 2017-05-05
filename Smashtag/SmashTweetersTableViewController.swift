@@ -11,13 +11,13 @@ import CoreData
 
 class SmashTweetersTableViewController: FetchedResultsTableViewController
 {
-    var mention : String? { didSet { updateUI() } }
+    var mention: String? { didSet { updateUI() } }
     
-    var container:  NSPersistentContainer? =
+    var container: NSPersistentContainer? =
         (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     { didSet { updateUI() } }
 
-    var fetchedResultsController: NSFetchedResultsController<TwitterUser>?
+    fileprivate var fetchedResultsController: NSFetchedResultsController<TwitterUser>?
     
     private func updateUI() {
         if let context = container?.viewContext, mention != nil {
@@ -48,6 +48,7 @@ class SmashTweetersTableViewController: FetchedResultsTableViewController
             let tweetCount = tweetCountWithMentionBy(twitterUser)
             cell.detailTextLabel?.text = "\(tweetCount) tweet\(tweetCount == 1 ? "" : "s")"
         }
+        
         return cell
     }
     
@@ -55,5 +56,38 @@ class SmashTweetersTableViewController: FetchedResultsTableViewController
         let request: NSFetchRequest<Tweet> = Tweet.fetchRequest()
         request.predicate = NSPredicate(format: "text contains[c] %@ and tweeter = %@", mention!, twitterUser)
         return (try? twitterUser.managedObjectContext!.count(for: request)) ?? 0
+    }
+}
+
+extension SmashTweetersTableViewController
+{
+    // MARK: UITableViewDataSource
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController?.sections?.count ?? 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let sections = fetchedResultsController?.sections, sections.count > 0 {
+            return sections[section].numberOfObjects
+        } else {
+            return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let sections = fetchedResultsController?.sections, sections.count > 0 {
+            return sections[section].name
+        } else {
+            return nil
+        }
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return fetchedResultsController?.sectionIndexTitles
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return fetchedResultsController?.section(forSectionIndexTitle: title, at: index) ?? 0
     }
 }
