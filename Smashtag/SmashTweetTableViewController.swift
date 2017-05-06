@@ -54,11 +54,21 @@ class SmashTweetTableViewController: TweetTableViewController
     
     // MARK: Navigation
     
+    private struct StoryBoard {
+        static let TweetersMentioningSearchTermSegue = "Tweeters Mentioning Search Term"
+        static let TweetMentionsSegue = "Tweet Mentions"
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Tweeters Mentioning Search Term" {
+        if segue.identifier == StoryBoard.TweetersMentioningSearchTermSegue {
             if let tweetersTVC = segue.destination as? SmashTweetersTableViewController {
                 tweetersTVC.mention = searchText
                 tweetersTVC.container = container
+            }
+        } else if segue.identifier == StoryBoard.TweetMentionsSegue {
+            if let mentionsTVC = segue.destination as? MentionsTableViewController,
+                let tweetTVC = sender as? TweetTableViewCell {
+                mentionsTVC.tweet = tweetTVC.tweet
             }
         }
     }
