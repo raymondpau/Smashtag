@@ -43,6 +43,7 @@ class MentionsTableViewController: UITableViewController
     private struct StoryBoard {
         static let KeyworkCellIdentifier = "Keyword Cell"
         static let ImageCellIdentifier = "Image Cell"
+        static let KeywordSearchSegue = "Keyword Search"
     }
     
     @IBInspectable var hashTagTextColor: UIColor = UIColor.purple
@@ -61,6 +62,11 @@ class MentionsTableViewController: UITableViewController
             }
             if let users = tweet?.userMentions, !users.isEmpty {
                 mentions.append(Mentions(title: Title.users, data: users.map { MentionItem.Keyword($0.keyword, userTextColor) }))
+            } else {
+                mentions.append(Mentions(title: Title.users, data: []))
+            }
+            if let tweeterScreenName = tweet?.user.screenName {
+                mentions[mentions.endIndex - 1].data.insert(MentionItem.Keyword("@\(tweeterScreenName)", userTextColor), at: 0)
             }
             if let urls = tweet?.urls, !urls.isEmpty {
                 mentions.append(Mentions(title: Title.urls, data: urls.map { MentionItem.Keyword($0.keyword, urlTextColor)}))
@@ -112,14 +118,32 @@ class MentionsTableViewController: UITableViewController
         }
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == StoryBoard.KeywordSearchSegue {
+            if let smashTweetTVC = segue.destination as? SmashTweetTableViewController {
+                smashTweetTVC.searchText = (sender as? UITableViewCell)?.textLabel?.text
+            }
+        }
     }
-    */
-
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == StoryBoard.KeywordSearchSegue {
+            if let text = (sender as? UITableViewCell)?.textLabel?.text,
+                text.lowercased().hasPrefix("http") {
+                if let url = URL(string: text) {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                }
+                return false
+            }
+        }
+        return true
+    }
 }

@@ -35,6 +35,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="LRE-El-DMG" kind="show" identifier="Keyword Search" id="iDS-dy-Hrt"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image Cell" rowHeight="280" id="v5h-YS-F1x" customClass="ImageTableViewCell" customModule="Smashtag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="375" height="280"/>
@@ -75,7 +78,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxl-Uo-lbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805.5999999999999" y="-411.544227886057"/>
+            <point key="canvasLocation" x="1806" y="-90"/>
         </scene>
         <!--Smash Tweet Table View Controller-->
         <scene sceneID="h0L-Zc-8ai">
@@ -226,7 +229,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ag-yU-vUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="303"/>
+            <point key="canvasLocation" x="1806" y="705"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FYu-uL-88W">
@@ -247,4 +250,7 @@
             <point key="canvasLocation" x="29.600000000000001" y="302.6986506746627"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iDS-dy-Hrt"/>
+    </inferredMetricsTieBreakers>
 </document>
