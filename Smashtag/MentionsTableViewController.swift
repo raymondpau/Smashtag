@@ -44,6 +44,7 @@ class MentionsTableViewController: UITableViewController
         static let KeyworkCellIdentifier = "Keyword Cell"
         static let ImageCellIdentifier = "Image Cell"
         static let KeywordSearchSegue = "Keyword Search"
+        static let ShowImageSegue = "Show Image"
     }
     
     @IBInspectable var hashTagTextColor: UIColor = UIColor.purple
@@ -126,6 +127,10 @@ class MentionsTableViewController: UITableViewController
         if segue.identifier == StoryBoard.KeywordSearchSegue {
             if let smashTweetTVC = segue.destination as? SmashTweetTableViewController {
                 smashTweetTVC.searchText = (sender as? UITableViewCell)?.textLabel?.text
+            }
+        } else if segue.identifier == StoryBoard.ShowImageSegue {
+            if let ivc = segue.destination as? ImageViewController {
+                ivc.imageURL = (sender as? ImageTableViewCell)?.imageURL
             }
         }
     }
