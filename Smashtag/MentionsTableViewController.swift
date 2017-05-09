@@ -129,8 +129,10 @@ class MentionsTableViewController: UITableViewController
                 smashTweetTVC.searchText = (sender as? UITableViewCell)?.textLabel?.text
             }
         } else if segue.identifier == StoryBoard.ShowImageSegue {
-            if let ivc = segue.destination as? ImageViewController {
-                ivc.imageURL = (sender as? ImageTableViewCell)?.imageURL
+            if let ivc = segue.destination as? ImageViewController,
+                let cell = sender as? ImageTableViewCell {
+                ivc.title = title
+                ivc.imageURL = cell.imageURL
             }
         }
     }
@@ -149,6 +151,6 @@ class MentionsTableViewController: UITableViewController
                 return false
             }
         }
-        return true
+        return super.shouldPerformSegue(withIdentifier: identifier, sender: sender);
     }
 }

@@ -91,31 +91,26 @@ class ImageViewController: UIViewController
             // so use optional chaining to do nothing
             // if our scrollView outlet has not yet been set
             scrollView?.contentSize = imageView.frame.size
-            autoZoom()
             
             // now that we've set an image
             // stop any spinner that exists from spinning
             spinner?.stopAnimating()
+            
+            autoZoom()
         }
     }
     
     private func autoZoom() {
         if image != nil && scrollView != nil {
-            let aspectRatio = scrollView.frame.width / scrollView.frame.height
-            var zoomedWidth = image!.size.width
-            var zoomedHeight = image!.size.width / aspectRatio
-            if zoomedHeight > image!.size.height {
-                zoomedHeight = image!.size.height
-                zoomedWidth = image!.size.height * aspectRatio
-            }
-            
-            let zoomedRect = CGRect(x: 0.0, y: 0.0, width: zoomedWidth, height: zoomedHeight)
-            scrollView.contentOffset = CGPoint(x: 0, y: 0)
-            scrollView?.zoom(to: zoomedRect, animated: true)
+            scrollView.zoomScale = max(scrollView.bounds.size.height / image!.size.height,
+                                scrollView.bounds.size.width / image!.size.width)
+            scrollView.contentOffset = CGPoint(x: (imageView.frame.size.width - scrollView.frame.size.width) / 2,
+                                               y: (imageView.frame.size.height - scrollView.frame.size.height) / 2)
         }
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         autoZoom()
     }
 }
