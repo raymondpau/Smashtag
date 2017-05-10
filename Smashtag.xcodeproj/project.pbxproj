@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B72047141EC2A9470025A228 /* RecentQueriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72047131EC2A9470025A228 /* RecentQueriesTableViewController.swift */; };
+		B72047161EC2B02F0025A228 /* RecentQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72047151EC2B02F0025A228 /* RecentQueries.swift */; };
 		B728D0A51EBF42620024724C /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728D0A41EBF42620024724C /* ImageViewController.swift */; };
 		B72AB8821EBDD7BD00800EF9 /* MentionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72AB8811EBDD7BD00800EF9 /* MentionsTableViewController.swift */; };
 		B72AB8841EBDE86800800EF9 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72AB8831EBDE86800800EF9 /* ImageTableViewCell.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B72047131EC2A9470025A228 /* RecentQueriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentQueriesTableViewController.swift; sourceTree = "<group>"; };
+		B72047151EC2B02F0025A228 /* RecentQueries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentQueries.swift; sourceTree = "<group>"; };
 		B728D0A41EBF42620024724C /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		B72AB8811EBDD7BD00800EF9 /* MentionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsTableViewController.swift; sourceTree = "<group>"; };
 		B72AB8831EBDE86800800EF9 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				B72AB8811EBDD7BD00800EF9 /* MentionsTableViewController.swift */,
 				B72AB8831EBDE86800800EF9 /* ImageTableViewCell.swift */,
 				B728D0A41EBF42620024724C /* ImageViewController.swift */,
+				B72047131EC2A9470025A228 /* RecentQueriesTableViewController.swift */,
+				B72047151EC2B02F0025A228 /* RecentQueries.swift */,
 				B755A57E1EB8D4F400C2A1EB /* Info.plist */,
 				B755A5841EB8D6E200C2A1EB /* Supporting Files */,
 			);
@@ -198,9 +204,11 @@
 				B7CC29E71EBA05DA00048D66 /* SmashTweetTableViewController.swift in Sources */,
 				B771EB041EBB496B003A461F /* FetchedResultsTableViewController.swift in Sources */,
 				B755A5731EB8D4F400C2A1EB /* AppDelegate.swift in Sources */,
+				B72047161EC2B02F0025A228 /* RecentQueries.swift in Sources */,
 				B72AB8841EBDE86800800EF9 /* ImageTableViewCell.swift in Sources */,
 				B7CC29E11EBA002700048D66 /* Tweet.swift in Sources */,
 				B72AB8821EBDD7BD00800EF9 /* MentionsTableViewController.swift in Sources */,
+				B72047141EC2A9470025A228 /* RecentQueriesTableViewController.swift in Sources */,
 				B7CC29E31EBA004B00048D66 /* TwitterUser.swift in Sources */,
 				B755A5861EB8D74700C2A1EB /* TweetTableViewController.swift in Sources */,
 				B7CC29DF1EB9F9AF00048D66 /* Smash.xcdatamodeld in Sources */,

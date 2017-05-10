@@ -78,6 +78,7 @@ class ImageViewController: UIViewController
     }
     
     fileprivate var imageView = UIImageView()
+    fileprivate var scrollViewDidScrollOrZoom = false
     
     private var image: UIImage? {
         get {
@@ -96,11 +97,12 @@ class ImageViewController: UIViewController
             // stop any spinner that exists from spinning
             spinner?.stopAnimating()
             
-            autoZoom()
+            autoScale()
+            scrollViewDidScrollOrZoom = false
         }
     }
     
-    private func autoZoom() {
+    private func autoScale() {
         if image != nil && scrollView != nil {
             scrollView.zoomScale = max(scrollView.bounds.size.height / image!.size.height,
                                 scrollView.bounds.size.width / image!.size.width)
@@ -111,7 +113,9 @@ class ImageViewController: UIViewController
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        autoZoom()
+        if !scrollViewDidScrollOrZoom {
+            autoScale()
+        }
     }
 }
 
@@ -124,5 +128,13 @@ extension ImageViewController : UIScrollViewDelegate
 {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView;
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        scrollViewDidScrollOrZoom = true
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollViewDidScrollOrZoom = true
     }
 }
