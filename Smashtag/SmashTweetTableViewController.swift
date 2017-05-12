@@ -10,6 +10,9 @@ import UIKit
 import Twitter
 import CoreData
 
+private let TweetersMentioningSearchTermSegue = "Tweeters Mentioning Search Term"
+private let TweetMentionsSegue = "Tweet Mentions"
+
 class SmashTweetTableViewController: TweetTableViewController
 {
     var container: NSPersistentContainer? =
@@ -21,14 +24,12 @@ class SmashTweetTableViewController: TweetTableViewController
     }
     
     private func updateDatabase(with tweets: [Twitter.Tweet]) {
-        print("starting database load")
-        container?.performBackgroundTask { [weak self] context in
+        container?.performBackgroundTask { context in
             for twitterInfo in tweets {
                 _ = try? Tweet.findOrCreateTweet(matching: twitterInfo, in: context)
             }
             try? context.save()
-            print("done loading database")
-            self?.printDatabaseStatistics()
+            //self?.printDatabaseStatistics()
         }
     }
     
@@ -54,22 +55,19 @@ class SmashTweetTableViewController: TweetTableViewController
     
     // MARK: Navigation
     
-    private struct StoryBoard {
-        static let TweetersMentioningSearchTermSegue = "Tweeters Mentioning Search Term"
-        static let TweetMentionsSegue = "Tweet Mentions"
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == StoryBoard.TweetersMentioningSearchTermSegue {
+        if segue.identifier == TweetersMentioningSearchTermSegue {
             if let tweetersTVC = segue.destination as? SmashTweetersTableViewController {
                 tweetersTVC.mention = searchText
                 tweetersTVC.container = container
             }
-        } else if segue.identifier == StoryBoard.TweetMentionsSegue {
+        } else if segue.identifier == TweetMentionsSegue {
             if let mentionsTVC = segue.destination as? MentionsTableViewController,
                 let tweetTVC = sender as? TweetTableViewCell {
                 mentionsTVC.tweet = tweetTVC.tweet
             }
+        } else {
+            return super.prepare(for: segue, sender: sender)
         }
     }
 }

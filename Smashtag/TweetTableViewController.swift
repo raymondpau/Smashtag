@@ -17,6 +17,8 @@ import Twitter
 // into the Embedded Binaries section
 // of the Project Settings of this application
 
+private let ShowImagesSegue = "Show Images"
+
 class TweetTableViewController: UITableViewController, UITextFieldDelegate
 {
     // MARK: Model
@@ -163,5 +165,15 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         // make it a little clearer when each pull from Twitter
         // occurs in the table by setting section header titles
         return "\(tweets.count-section)"
+    }
+    
+    // Mark: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == ShowImagesSegue {
+            if let tweetImageCVT = segue.destination as? TweetImageCollectionViewController {
+                tweetImageCVT.tweets = tweets.flatMap { $0 }.filter { $0.media.count > 0 }
+            }
+        }
     }
 }

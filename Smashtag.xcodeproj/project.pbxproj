@@ -22,6 +22,8 @@
 		B755A58C1EB8E3AF00C2A1EB /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755A58B1EB8E3AF00C2A1EB /* TweetTableViewCell.swift */; };
 		B771EB021EBB466E003A461F /* SmashTweetersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771EB011EBB466E003A461F /* SmashTweetersTableViewController.swift */; };
 		B771EB041EBB496B003A461F /* FetchedResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771EB031EBB496B003A461F /* FetchedResultsTableViewController.swift */; };
+		B7ADD7521EC3387800AE6A2F /* TweetImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADD7511EC3387800AE6A2F /* TweetImageCollectionViewController.swift */; };
+		B7BCFB881EC35573000F374C /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BCFB871EC35573000F374C /* ImageCollectionViewCell.swift */; };
 		B7CC29DF1EB9F9AF00048D66 /* Smash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29DD1EB9F9AF00048D66 /* Smash.xcdatamodeld */; };
 		B7CC29E11EBA002700048D66 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29E01EBA002700048D66 /* Tweet.swift */; };
 		B7CC29E31EBA004B00048D66 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC29E21EBA004B00048D66 /* TwitterUser.swift */; };
@@ -59,6 +61,8 @@
 		B755A58B1EB8E3AF00C2A1EB /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		B771EB011EBB466E003A461F /* SmashTweetersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmashTweetersTableViewController.swift; sourceTree = "<group>"; };
 		B771EB031EBB496B003A461F /* FetchedResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsTableViewController.swift; sourceTree = "<group>"; };
+		B7ADD7511EC3387800AE6A2F /* TweetImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetImageCollectionViewController.swift; sourceTree = "<group>"; };
+		B7BCFB871EC35573000F374C /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B7CC29DE1EB9F9AF00048D66 /* Smash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smash.xcdatamodel; sourceTree = "<group>"; };
 		B7CC29E01EBA002700048D66 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		B7CC29E21EBA004B00048D66 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				B72AB8811EBDD7BD00800EF9 /* MentionsTableViewController.swift */,
 				B72AB8831EBDE86800800EF9 /* ImageTableViewCell.swift */,
 				B728D0A41EBF42620024724C /* ImageViewController.swift */,
+				B7ADD7511EC3387800AE6A2F /* TweetImageCollectionViewController.swift */,
+				B7BCFB871EC35573000F374C /* ImageCollectionViewCell.swift */,
 				B72047131EC2A9470025A228 /* RecentQueriesTableViewController.swift */,
 				B72047151EC2B02F0025A228 /* RecentQueries.swift */,
 				B755A57E1EB8D4F400C2A1EB /* Info.plist */,
@@ -201,7 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7ADD7521EC3387800AE6A2F /* TweetImageCollectionViewController.swift in Sources */,
 				B7CC29E71EBA05DA00048D66 /* SmashTweetTableViewController.swift in Sources */,
+				B7BCFB881EC35573000F374C /* ImageCollectionViewCell.swift in Sources */,
 				B771EB041EBB496B003A461F /* FetchedResultsTableViewController.swift in Sources */,
 				B755A5731EB8D4F400C2A1EB /* AppDelegate.swift in Sources */,
 				B72047161EC2B02F0025A228 /* RecentQueries.swift in Sources */,
